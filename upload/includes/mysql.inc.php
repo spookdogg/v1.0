@@ -1,8 +1,7 @@
 <?php
 //***************************************************************************//
 //                                                                           //
-//  Copyright (c) 2007 Jonathon Freeman                                      //
-//  Copyright (c) 2007 Brian Otto                                            //
+//  Copyright (c) 2015-2016 Phillip                                           //
 //  All rights reserved.                                                     //
 //                                                                           //
 //  This program is free software. You may use, modify, and/or redistribute  //
@@ -20,7 +19,7 @@ class DBConnection
 	var $objConnection;
 	var $objSelect;
 	var $objResult;
-	var $aVersions = array('0.16a');
+	var $aVersions = array('1.0');
 	var $aSpecialQueries = array();
 
 	// Initializes the database connection.
