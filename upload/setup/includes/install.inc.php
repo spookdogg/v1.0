@@ -1,8 +1,7 @@
 <?php
 //***************************************************************************//
 //                                                                           //
-//  Copyright (c) 2004-2007 Jonathon Freeman                                 //
-//  Copyright (c) 2007 Brian Otto                                            //
+//  Copyright (c) 2015-2016 Phillip                                          //
 //  All rights reserved.                                                     //
 //                                                                           //
 //  This program is free software. You may use, modify, and/or redistribute  //
@@ -39,8 +38,8 @@
 ?>
 
 <h1>Install OvBB</h1>
-<p>This script will help you setup a fresh installation of OvBB V0.16a.</p>
-<p>If you need to <i>upgrade</i> from V0.15a, click <a href="index.php?setup=upgrade">here</a>. Otherwise, click <a href="index.php?step=1">here</a> to begin the installation.</p>
+<p>This script will help you setup a fresh installation of OvBB v1.0.</p>
+<p>If you need to <i>upgrade</i> from V0.1, click <a href="index.php?setup=upgrade">here</a>. Otherwise, click <a href="index.php?step=1">here</a> to begin the installation.</p>
 
 <?php
 	// Footer
@@ -302,7 +301,7 @@ function Step3B()
 	$CFG['general']['copyright'] = $_SESSION['copyright'];
 	$CFG['general']['admin']['email'] = $_SESSION['adminemail'];
 	eval("\$CFG['msg']['invalidlink'] = \"{$CFG['msg']['invalidlink']}\";");
-	$CFG['version'] = '0.16a';
+	$CFG['version'] = '1.0';
 
 	// Save the settings to the database.
 	$strSettings = $dbConn->sanitize(serialize($CFG));
