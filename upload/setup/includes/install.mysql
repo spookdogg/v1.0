@@ -1,0 +1,244 @@
+CREATE TABLE `attachment` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `filename` varchar(255) default NULL,
+  `filedata` mediumblob,
+  `viewcount` int(10) unsigned default NULL,
+  `parent` int(10) unsigned default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `parent` (`parent`)
+);
+
+CREATE TABLE `avatar` (
+  `id` int(10) unsigned NOT NULL default '0',
+  `filename` varchar(255) default NULL,
+  `datum` mediumblob,
+  `datetime` int(10) unsigned NOT NULL default '0',
+  `datatype` tinyint(2) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `board` (
+  `id` smallint(5) unsigned NOT NULL auto_increment,
+  `disporder` smallint(5) unsigned NOT NULL default '0',
+  `name` varchar(255) default NULL,
+  `description` varchar(255) default NULL,
+  `displaydepth` tinyint(3) unsigned NOT NULL default '0',
+  `parent` smallint(5) unsigned default NULL,
+  `postcount` int(10) unsigned NOT NULL default '0',
+  `threadcount` int(10) unsigned NOT NULL default '0',
+  `lpost` int(10) unsigned default NULL,
+  `lposter` int(10) unsigned default NULL,
+  `lthread` int(10) unsigned default NULL,
+  `lthreadpcount` int(10) unsigned default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `displaydepth` (`displaydepth`),
+  KEY `disporder` (`disporder`),
+  KEY `parent` (`parent`)
+);
+
+INSERT INTO `board` (`id`, `disporder`, `name`, `description`) VALUES (1, 1, 'Main Category', 'Main category description');
+INSERT INTO `board` (`id`, `disporder`, `name`, `description`, `displaydepth`, `parent`) VALUES (2, 1, 'Main Forum', 'Main forum description', 1, 1);
+
+CREATE TABLE `configuration` (
+  `name` varchar(255) NOT NULL default '',
+  `content` text NOT NULL,
+  PRIMARY KEY  (`name`)
+);
+
+CREATE TABLE `event` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `author` int(10) unsigned default NULL,
+  `startdate` date default NULL,
+  `title` varchar(255) default NULL,
+  `body` text,
+  `private` tinyint(1) unsigned default NULL,
+  `dsmilies` tinyint(1) unsigned default NULL,
+  `ipaddress` int(10) default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `citizen` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(255) NOT NULL,
+  `passphrase` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `datejoined` date NOT NULL,
+  `website` varchar(255) default NULL,
+  `aim` varchar(255) default NULL,
+  `icq` varchar(255) default NULL,
+  `msn` varchar(255) default NULL,
+  `yahoo` varchar(255) default NULL,
+  `referrer` varchar(255) default NULL,
+  `birthday` date default NULL,
+  `bio` varchar(255) default NULL,
+  `residence` varchar(255) default NULL,
+  `interests` varchar(255) default NULL,
+  `occupation` varchar(255) default NULL,
+  `avatarid` int(10) default NULL,
+  `signature` varchar(255) default NULL,
+  `allowmail` tinyint(1) unsigned default '1',
+  `invisible` tinyint(1) unsigned default '0',
+  `publicemail` tinyint(1) unsigned default '0',
+  `enablepms` tinyint(1) unsigned default '1',
+  `pmnotifya` tinyint(1) unsigned default '1',
+  `pmnotifyb` tinyint(1) unsigned default '1',
+  `rejectpms` tinyint(1) unsigned default '1',
+  `threadview` smallint(4) unsigned default '0',
+  `postsperpage` tinyint(1) unsigned default '0',
+  `threadsperpage` tinyint(1) unsigned default '0',
+  `weekstart` tinyint(1) unsigned default '0',
+  `timeoffset` mediumint(8) default '0',
+  `title` varchar(255) default NULL,
+  `lastactive` int(10) default NULL,
+  `postcount` int(10) unsigned NOT NULL default '0',
+  `lastlocation` varchar(255) default NULL,
+  `ipaddress` int(10) default NULL,
+  `dst` tinyint(1) unsigned default '0',
+  `dstoffset` smallint(5) unsigned default '0',
+  `showsigs` tinyint(1) unsigned default '1',
+  `showavatars` tinyint(1) unsigned default '1',
+  `autologin` tinyint(1) unsigned default '0',
+  `buddylist` text,
+  `ignorelist` text,
+  `pmfolders` text,
+  `usergroup` tinyint(2) unsigned default '0',
+  `loggedin` tinyint(1) default '0',
+  `lastrequest` mediumtext,
+  `reghash` char(32) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `lastactive` (`lastactive`),
+  KEY `loggedin` (`loggedin`),
+  KEY `reghash` (`reghash`)
+);
+
+CREATE TABLE `pm` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `ownerid` int(10) unsigned default NULL,
+  `author` int(10) unsigned default NULL,
+  `recipient` int(10) unsigned default NULL,
+  `subject` varchar(255) default NULL,
+  `body` text,
+  `parent` smallint(5) unsigned default NULL,
+  `ipaddress` int(10) default NULL,
+  `icon` tinyint(1) unsigned default NULL,
+  `dsmilies` tinyint(1) unsigned default NULL,
+  `beenread` tinyint(1) unsigned default NULL,
+  `readtime` int(10) unsigned default NULL,
+  `tracking` tinyint(1) unsigned default NULL,
+  `replied` tinyint(1) unsigned default NULL,
+  `datetime` int(10) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `ownerid` (`ownerid`)
+);
+
+CREATE TABLE `poll` (
+  `id` int(10) unsigned NOT NULL default '0',
+  `datetime` int(10) default NULL,
+  `question` varchar(255) default NULL,
+  `answers` text,
+  `multiplechoices` tinyint(1) unsigned default NULL,
+  `timeout` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `pollvote` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `parent` int(10) unsigned default NULL,
+  `ownerid` int(10) unsigned default NULL,
+  `vote` int(10) unsigned default NULL,
+  `votedate` int(10) unsigned default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `post` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `author` int(10) unsigned default NULL,
+  `datetime_posted` int(10) default NULL,
+  `datetime_edited` int(10) default NULL,
+  `title` varchar(255) default NULL,
+  `body` text,
+  `parent` int(10) unsigned default NULL,
+  `ipaddress` int(10) default NULL,
+  `icon` tinyint(1) unsigned default NULL,
+  `dsmilies` tinyint(1) unsigned default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `datetime_posted` (`datetime_posted`),
+  KEY `author` (`author`),
+  KEY `parent` (`parent`)
+);
+
+CREATE TABLE `request` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `rkey` int(8) unsigned default NULL,
+  `rtimestamp` int(10) default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `searchindex` (
+  `postid` int(10) unsigned NOT NULL default '0',
+  `wordid` int(10) unsigned NOT NULL default '0',
+  `intitle` tinyint(1) unsigned NOT NULL default '0'
+);
+
+CREATE TABLE `searchresult` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `author` int(10) unsigned NOT NULL default '0',
+  `ipaddress` int(10) default NULL,
+  `searchtime` int(10) unsigned NOT NULL default '0',
+  `querystring` varchar(255) NOT NULL default '',
+  `results` text NOT NULL,
+  `sortinfo` varchar(255) NOT NULL default '',
+  `showposts` tinyint(1) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `searchword` (
+  `wordid` int(10) unsigned NOT NULL auto_increment,
+  `word` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`wordid`)
+);
+
+CREATE TABLE `guest` (
+  `id` varchar(32) NOT NULL default '',
+  `lastactive` int(10) default NULL,
+  `lastlocation` varchar(255) default NULL,
+  `ipaddress` int(10) default NULL,
+  `lastrequest` mediumtext,
+  PRIMARY KEY  (`id`),
+  KEY `lastactive` (`lastactive`)
+);
+
+CREATE TABLE `stats` (
+  `name` varchar(255) NOT NULL default '0',
+  `content` int(10) unsigned default NULL,
+  PRIMARY KEY  (`name`)
+);
+
+INSERT INTO `stats` (`name`, `content`) VALUES ('membercount', 0);
+INSERT INTO `stats` (`name`, `content`) VALUES ('newestmember', NULL);
+INSERT INTO `stats` (`name`, `content`) VALUES ('threadcount', 0);
+INSERT INTO `stats` (`name`, `content`) VALUES ('postcount', 0);
+INSERT INTO `stats` (`name`, `content`) VALUES ('mostuserscount', 0);
+INSERT INTO `stats` (`name`, `content`) VALUES ('mostusersdate', UNIX_TIMESTAMP());
+
+CREATE TABLE `thread` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `title` varchar(255) default NULL,
+  `description` varchar(255) default NULL,
+  `parent` smallint(5) unsigned default NULL,
+  `viewcount` int(10) unsigned NOT NULL default '0',
+  `postcount` int(10) unsigned NOT NULL default '0',
+  `attachcount` int(10) unsigned NOT NULL default '0',
+  `lpost` int(10) unsigned NOT NULL default '0',
+  `lposter` int(10) unsigned default NULL,
+  `icon` tinyint(1) unsigned default NULL,
+  `author` int(10) unsigned default NULL,
+  `closed` tinyint(1) unsigned default NULL,
+  `visible` tinyint(1) unsigned default NULL,
+  `sticky` tinyint(1) unsigned default NULL,
+  `notes` mediumtext,
+  `poll` tinyint(1) unsigned default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `parent` (`parent`),
+  KEY `visible` (`visible`)
+);

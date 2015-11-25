@@ -1,0 +1,1 @@
+ALTER TABLE `citizen` ADD COLUMN `rejectpms` tinyint(1) unsigned default '1';

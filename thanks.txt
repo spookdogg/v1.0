@@ -1,0 +1,11 @@
+Public thanks goes out to:
+
+[EMOBA] and tgm of the Flashdaddee Forums [ http://www.flashdaddee.com/forums ]
+ for helping me during the first 6 months of development on various
+ things regarding SQL and PHP.
+
+Brian Kent of Aenigma Games & Fonts [ http://www.aenigmafonts.com ]
+ for allowing the project to use his TrueType font, Entangled.
+
+All the users on the OvBB Project Forums [ http://www.ovbb.org/forums ]
+ for the motivation and helping test.

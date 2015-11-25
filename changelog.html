@@ -1,0 +1,601 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+
+	<style type="text/css">
+	<!--
+		body
+		{
+			font-family: sans-serif;
+			font-size: 10pt;
+			width: 700px;
+		}
+		ul
+		{
+			padding-bottom: 1em;
+		}
+		ul.sublist
+		{
+			padding-bottom: 0.2em;
+		}
+		a.heading
+		{
+			font-size: 1.6em;
+			font-weight: bold;
+			text-decoration: none;
+			color: black;
+		}
+	-->
+	</style>
+
+	<script type="text/javascript">
+	<!--
+		function showhide(obj)
+		{
+			var el = document.getElementById(obj);
+			el.style.display = (el.style.display != 'none') ? 'none' : '' ;
+		}
+	//-->
+	</script>
+
+	<title>OvBB Change Log</title>
+</head>
+
+<body>
+
+<div><a class="heading" href="javascript:showhide('v16');">V0.16a</a></div>
+
+<ul id="v16">
+	<li>Implemented so-called &quot;type 2&quot; database abstraction and added drivers for MySQL and PostgreSQL.</li>
+	<li>Added &quot;Logout&quot; and &quot;Mark All Forums Read&quot; links to the forum index.</li>
+	<li>Added a Censored Words section to the Admin CP.</li>
+	<li>Added a new usergroup permission to determine if users can bypass the floodcheck (useful for admins).</li>
+	<li>Added two new BB codes: [sup] and [sub] for superscript and subscript text, respectively.</li>
+	<li>Added multi-forum search capabilities; this fixes bug #463.</li>
+	<li>Fixed some bugs with the Admin CP link not showing up in certain areas sometimes.</li>
+	<li>Fixed a bug that caused the time for the "Most users ever online" not to observe the user's time settings.</li>
+	<li>Fixed some redirect bugs.</li>
+	<li>Fixed some bugs in the [php] BB code that caused markup to be fudged in special cases.</li>
+	<li>Fixed a bug that caused the user's location not to be displayed on private messages.</li>
+	<li>Fixed some JavaScript to work in IE.</li>
+	<li>Fixed two fatal bugs in the Move/Copy moderator feature. Also fixed a related bug that prevented attachments from being copied.</li>
+	<li>Fixed some typos.</li>
+	<li>When replying to posts and PMs, &quot;Re:&quot; is no longer prepended to the subject more than once.</li>
+	<li>Search results now expire after 24 hours.</li>
+	<li>Pruning (filtering) threads no longer affects sticky threads.</li>
+	<li>The &quot;Add user to list&quot; links on member profiles now reflect the contents of the user's lists.</li>
+	<li>Users can no longer be in both someone's Buddy list and Ignore list simultaneously.</li>
+	<li>Poll result bars are now rendered with CSS instead of PNG images.</li>
+	<li>The Member list now only shows activated users.</li>
+	<li>Unparsed BB code is no longer shown when viewing search results as posts.</li>
+	<li>Reworked the overflow styles and fixed an issue on search results when viewed as posts.</li>
+	<li>The IP column on Who's Online is now only displayed when IP logging is enabled and the user has permission to view them.</li>
+	<li>The [code] and [php] BB codes now keep inital tabs intact.</li>
+	<li>The &quot;Location:&quot; line in posts and PMs is no longer shown for users without locations.</li>
+	<li>A default list of censored words is no longer included.</li>
+	<li>Users can now specify whether users on their Ignore list can PM them; this fixes bug #297.</li>
+	<li>Breadcrumb is now included for Show Single Post.</li>
+	<li>Smilies up to 35px in height now display nicely in the Admin CP.</li>
+	<li>Minor cleanup and bug fixes.</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v15');">V0.15a</a></div>
+
+<ul id="v15">
+	<li>Implemented a flood check setting.</li>
+	<li>Users can now disable private messaging.</li>
+	<li>Implemented PM popup notification.</li>
+	<li>Added a PM information section underneath the <i>Who's Online</i> section.</li>
+	<li>Added a usergroup permission to determine whether or not a user can access the Admin CP.</li>
+	<li>Added a usergroup permission to determine if a user can view invisible members.</li>
+	<li>Added the &quot;Most users ever online&quot; forum statistic.</li>
+	<li>Added an Edit Event calendar function.</li>
+	<li>Polls can now timeout.</li>
+	<li>Improved support for MySQL 3.</li>
+	<li>Implemented the List button on the BB Code toolbar.</li>
+	<li>Implemented e-mail validation in the registration process.</li>
+	<li>Fixed a bug that caused Setup to fall into an infinite loop when the user had cookies disabled.</li>
+	<li>Fixed a bug that caused PHP notices to be displayed to the user during Setup.</li>
+	<li>Fixed some overflow problems in IE7.</li>
+	<li>Fixed a bug in the &quot;Go to first newest post&quot; link that caused users with cookies disabled to be logged out.</li>
+	<li>Fixed a broken link and a missing Member Location.</li>
+	<li>Moved the stylesheet into the default skin directory, where it belongs.</li>
+	<li>Made the system <code>include_path</code>-agnostic.</li>
+	<li>Smilies and BB codes are now inserted where the cursor is located, instead of just being appended to the message text.</li>
+	<li>Improved the <i>Inital Character</i> linkset on the Member List.</li>
+	<li>Minor markup &amp; CSS cleanup</li>
+	<li>Minor code cleanup</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v14');">V0.14a</a></div>
+
+<ul id="v14">
+	<li>Implemented an Attachments section in the Admin CP, where attachment settings can be configured.</li>
+	<li>Significantly overhauled the Read/Unread messages feature.</li>
+	<li>Implemented the &quot;E-Mail User&quot; feature.</li>
+	<li>Added a Preview button to the Add Event page.</li>
+	<li>Added a [thread=<i>blah</i>] BB code tag.</li>
+	<li>Added a [quote=<i>blah</i>] BB code tag.</li>
+	<li>Added a <code>showpost</code> action to <code>thread.php</code>.</li>
+	<li>Added a &quot;Quick Login&quot; form to the forum index page.</li>
+	<li>Parameters in BB code tags can now be enclosed within quotes.</li>
+	<li>Disabled smilies within [php] and [code] BB code tags.</li>
+	<li>Numbers that are displayed throughout the forum are now formatted so as to be grouped by thousands.</li>
+	<li>Users' Ignore lists are now respected when viewing threads.</li>
+	<li>Enabled alpha transparency for images, so that they display correctly regardless of the background color.</li>
+	<li>Made the Verification Image / CAPTCA text case-insensitive.</li>
+	<li>Updated the OvBB logo with a fine black outer stroke.</li>
+	<li>Renamed all reserved database keywords for preparation of database abstraction in the coming versions.</li>
+	<li>Removed all deprecated XHTML elements, with the exception of &lt;u&gt; and &lt;font&gt; (for the [size] BB code tag).</li>
+	<li>Dropped support for Internet Explorer 6 and older; get Firefox or upgrade to IE7.</li>
+	<li>Fixed a bug in the pagination linkset for <code>thread.php</code>, which caused pruned days not to be observed.</li>
+	<li>Fixed a potential XSS vulnerability in <code>online.php</code>.</li>
+	<li>Fixed a bug that caused users' invisibility not to be observed when in someone's Buddy list.</li>
+	<li>Fixed a bug that caused certain combinations of characters to be incorrectly parsed as a winking smilie.</li>
+	<li>Fixed a bug in <code>register.php</code> that caused the user to have to re-enter their Web site address in some cases.</li>
+	<li>Fixed a markup bug, on the Edit Forum page in the Admin CP, that caused unexpected results.</li>
+	<li>Fixed a bug that prevented users from modifying their Ignore list in certain scenarios.</li>
+	<li>Fixed a bug that caused post icons, for unread private messages, to not be shown.</li>
+	<li>Fixed incorrect post links in the search results when posts weren't on the first pages of threads.</li>
+	<li>Lots of minor markup &amp; CSS cleanup</li>
+	<li>Lots of minor code cleanup</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v13');">V0.13a</a></div>
+
+<ul id="v13">
+	<li>Implemented rudimentary skinning, which is comprised of several components:
+		<ul class="sublist">
+			<li>New database field, <code>skins</code> in the <code>setting</code> table, which stores the available skins</li>
+			<li>New configuration setting, <code>$CFG['skin']</code>, which determines which skin to use</li>
+			<li>New directory, <code>/skins</code>, which stores the skin files</li>
+		</ul>
+	</li>
+	<li>Added a Topic Review section at the bottom of the New Reply page.</li>
+	<li>Rewrote the [php] BB code parser to work under PHP 5 and handle inline HTML, as well as to fix some unusual behaviors.</li>
+	<li>Added overflow styles to these BB codes: [php], [code], &amp; [quote].</li>
+	<li>Nearly doubled the performance of <code>index.php</code> by adding a <code>stats</code> table to the database, which caches the newest member's ID, the number of registered members, and the global thread and post counts.</li>
+	<li>Increased the performance of <code>index.php</code> and <code>forumdisplay.php</code> by adding <code>postcount</code> and <code>threadcount</code> fields to the <code>board</code> table. These new fields cache the post and thread counts for each forum, so they're no longer computed on-the-fly.</li>
+	<li>Increased the performance of <code>forumdisplay.php</code> and <code>thread.php</code> by adding <code>postcount</code> and <code>attachcount</code> fields to the <code>thread</code> table. These new fields cache the threads' post and attachment counts, so they're no longer computed on-the-fly.</li>
+	<li>Increased the performance of <code>forumdisplay.php</code> even more (when days aren't pruned) by using the forum's cached thread count instead of computing it on-the-fly.</li>
+	<li>Removed the ability (or, rather partial ability) for guest posting.</li>
+	<li>Fixed a minor bug that caused users' post counts to be updated incorrectly.</li>
+	<li>Improved the method for logging a user out.</li>
+	<li>Fixed an SQL injection vulnerability in <code>search.php</code>.</li>
+	<li>Fixed a bug that prevented users from logging out when the system is installed in certain environments.</li>
+	<li>Fixed a fatal bug encountered when a message is posted containing one or more words greater than 255 characters in length.</li>
+	<li>Related search indexes are now deleted when a forum is removed via the Admin CP.</li>
+	<li>Members' post counts are now updated when a forum is removed via the Admin CP.</li>
+	<li>Added a new function, <code>sqlsanitize()</code>, that's now used to sanitize variables for database insertion.</li>
+	<li>Consolidated redundant code into a new global function, <code>GetUsernames()</code>.</li>
+	<li>Disabled HTML errors.</li>
+	<li>Many minor bug fixes</li>
+	<li>Tons of minor markup &amp; CSS cleanup and fixes</li>
+	<li>Tons of minor code cleanup</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v12');">V0.12a</a></div>
+
+<ul id="v12">
+	<li>Fixed a bug that made it impossible to add new avatars.</li>
+	<li>Fixed a bug that prevented the deletion of attachments.</li>
+	<li>Fixed a bug that prevented post icons from being removed.</li>
+	<li>Fixed a longstanding bug that caused avatars to load slowly.</li>
+	<li>Fixed a very bizarre and erratic bug that sometimes prevented users with cookies disabled from being properly redirected after logging in.</li>
+	<li>Eliminated an error message encountered in the Avatars section of the Admin CP when no public avatars are installed.</li>
+	<li>Eliminated time-related warnings on PHP 5.1.0 and greater.</li>
+	<li>Added a new path setting for cookies.</li>
+	<li>Minor markup cleanup</li>
+	<li>Lots of minor code consolidation and cleanup</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v11');">V0.11a</a></div>
+
+<ul id="v11">
+	<li>The long-awaited Admin Control Panel makes its debut, comprised of several components:
+		<ul class="sublist">
+			<li>Main source file, <code>admincp.php</code></li>
+			<li>New directory, <code>/includes/admincp</code>, which stores the dependencies of <code>admincp.php</code>:
+				<ul class="sublist">
+					<li><code>addavatar.inc.php</code></li>
+					<li><code>addforum.inc.php</code></li>
+					<li><code>addposticon.inc.php</code></li>
+					<li><code>addsmilie.inc.php</code></li>
+					<li><code>addusergroup.inc.php</code></li>
+					<li><code>addusergroupuser.inc.php</code></li>
+					<li><code>avatars.inc.php</code></li>
+					<li><code>editavatar.inc.php</code></li>
+					<li><code>editforum.inc.php</code></li>
+					<li><code>editposticon.inc.php</code></li>
+					<li><code>editsmilie.inc.php</code></li>
+					<li><code>editusergroup.inc.php</code></li>
+					<li><code>forums.inc.php</code></li>
+					<li><code>general.inc.php</code></li>
+					<li><code>posticons.inc.php</code></li>
+					<li><code>removeavatar.inc.php</code></li>
+					<li><code>removeforum.inc.php</code></li>
+					<li><code>removeposticon.inc.php</code></li>
+					<li><code>removesmilie.inc.php</code></li>
+					<li><code>removeusergroup.inc.php</code></li>
+					<li><code>smilies.inc.php</code></li>
+					<li><code>style.inc.php</code></li>
+					<li><code>usergroups.inc.php</code></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>Added a new database table, <code>configuration</code>, which replaces the functionality of these files:
+		<ul class="sublist">
+			<li><code>avatars.inc.php</code></li>
+			<li><code>censored.inc.php</code></li>
+			<li><code>config.inc.php</code></li>
+			<li><code>posticons.inc.php</code></li>
+			<li><code>smilies.inc.php</code></li>
+			<li><code>usergroups.inc.php</code></li>
+		</ul>
+	</li>
+	<li>Because of the previous change, all standard pages will consume an extra database query and about 0.005 seconds more of generation time; however, updating the forum configuration is now trivial and no longer requires PHP to have write permissions.</li>
+	<li>Changed the defaults of several <code>member</code> fields from <code>NULL</code> to realistic values.</li>
+	<li>Changed the data type of the <code>threadview</code> field in the <code>member</code> table from <code>tinyint(2)</code> to <code>smallint(4)</code>, since 1000 is the largest value it would hold.</li>
+	<li>Removed the <code>customavatar</code> field in the <code>member</code> table (again?!), as it isn't used anymore.</li>
+	<li>Removed the fulltext search key in the <code>post</code> table, as it was never used.</li>
+	<li>The <code>timestamp</code> field in the <code>avatar</code> table is now unsigned.</li>
+	<li>Added a new configuration setting, <code>$CFG['bufferoutput']</code>, which determines whether or not page output is buffered before it's sent to the client.</li>
+	<li>Added a new configuration setting, <code>$CFG['paths']['posticons']</code>, which specifies the file path of the installed post icons.</li>
+	<li>Post icons now have their own directory, by default, and no longer contain an underscore in their filenames.</li>
+	<li>Fixed a bug that prevented users from updating their avatar (unless they typed in the editavatar URI).</li>
+	<li>Fixed a bug that caused the &quot;Disable Smilies&quot; setting to not be observed when saving a copy of a sent message.</li>
+	<li>The stylesheet, <code>style.inc.php</code>, now observes the active, hover, and visited anchor property settings.</li>
+	<li>The database connection information will remain in a separate file, but is no longer created/updated by the Setup script; the administrator must do this when installing/upgrading.</li>
+	<li>The CAPTCHA image, <code>regimage.php</code>, now initializes OvBB like everything else.</li>
+	<li>Fixed some potential XSS vulnerabilities.</li>
+	<li>Lots of minor markup cleanup/fixes</li>
+	<li>Lots of minor cleanup/changes and bug fixes</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v10');">V0.10a</a></div>
+
+<ul id="v10">
+	<li>The system is now distributed under the terms of the MIT License</li>
+	<li>Added some moderator features via <code>mod.php</code>:
+		<ul class="sublist">
+			<li>Open/Close Threads</li>
+			<li>Stick/Unstick Threads</li>
+			<li>Delete Thread/Posts</li>
+			<li>Move / Copy Thread</li>
+			<li>Get IP</li>
+		</ul>
+	</li>
+	<li>As a result of the aforementioned new feature, the &quot;IP: Logged&quot; link (displayed with posts and PMs) now works</li>
+	<li>Added a rudimentary setup script for installing or upgrading</li>
+	<li>Categories are now searchable</li>
+	<li>Implemented the <code>finduser</code>, <code>getnew</code>, and <code>getdaily</code> routines in <code>search.php</code>; only thing left to do in the Search engine is to implement logical operators</li>
+	<li>The existing user option, <code>threadview</code>, is now implemented and is actually observed by <code>forumdisplay.php</code></li>
+	<li>The &quot;View New Posts&quot; and &quot;View Today's Active Threads&quot; links at the top of the forum index now work</li>
+	<li>Added &quot;Forum Jump&quot; and &quot;Search this forum&quot; forms to <code>forumdisplay.php</code></li>
+	<li>Added a new forum configuration setting, <code>$CFG['iplogging']</code>, which determines whether or not user IP addresses should be logged</li>
+	<li>Added two new usergroup permissions, <code>cmdeletethreads</code> and <code>cmstickythreads</code>, which are used in the new moderation routines</li>
+	<li>Added two new images, <code>user_search.png</code> and <code>user_buddy.png</code>, which are displayed as links under user messages</li>
+	<li>Added new image, <code>newreply_closed.png</code>, which is used in replace of <code>newreply.png</code> when a thread is closed</li>
+	<li>Added a new field, <code>timestamp</code>, to the <code>avatar</code> table of the database, which stores the avatar's last modification time preventing it from being downloaded more than once unnecessarily</li>
+	<li>Added a new field, <code>type</code>, to the <code>avatar</code> table of the database; since the image type is now stored in the avatar's record, determining the type is no longer based on the filename extension</li>
+	<li>Added a new field, <code>lpost</code>, to the <code>thread</code> table of the database, which stores the last post date of threads, allowing the <code>threadview</code> user option to be implemented</li>
+
+	<li>Improved the functionality of <code>editpost.php</code>:
+		<ul class="sublist">
+			<li>The user is redirected to their post, now taking into account which page it's on</li>
+			<li>Users' postcounts are now updated accurately when the entire thread is deleted</li>
+			<li>The poll (if the thread contains one) is removed when the entire thread is deleted</li>
+		</ul>
+	</li>
+	<li>The &quot;Find more posts by user&quot; links in threads, private messages, and member profiles now correctly uses the new <code>finduser</code> search routine instead of <code>query->usersearch</code></li>
+	<li>If the page requested in <code>forumdisplay.php</code>, <code>memberlist.php</code>, <code>search.php</code>, or <code>thread.php</code> is out of range, it is now defaulted to the last available page</li>
+	<li>Rewrote the "Jump to folder" feature used throughout the Private Messaging System to work when JavaScript is disabled or unsupported</li>
+	<li>Rewrote the "Forum Jump" forms located throughout the forums to work when JavaScript is disabled or unsupported</li>
+	<li>The error handler again observes <code>error_reporting()</code>, just in case a function is silenced with the <code>@</code> operator</li>
+	<li><code>Msg()</code> now displays a CSS-based message, instead of the table-based one it previously used</li>
+
+	<li>Fixed a bug that prevented users from picking a post icon with an ID greater than 14</li>
+	<li>Fixed a bug that prevented users with cookies disabled from properly being meta-redirected</li>
+	<li>Fixed the so-called &quot;double-tag&quot; bug in <code>ParseEMails()</code> which caused addresses already enclosed in tags to be double-tagged</li>
+	<li>Fixed a bug in <code>newreply.php</code>, <code>newthread.php</code>, and <code>editpost.php</code> that caused a user's posted information to be lost when it contained errors, requiring them to re-enter everything</li>
+	<li>Fixed a bug in <code>search.php</code> that caused results to be displayed in the reverse sort order when viewing as posts</li>
+	<li>Fixed and updated several location descriptions in <code>online.php</code></li>
+
+	<li>The <code>ipaddress</code> field in the <code>pm</code> and <code>searchresult</code> tables is no longer unsigned so that it can store all values returned from PHP's <code>ip2long()</code> function</li>
+	<li>The <code>ipaddress</code> field in the <code>searchresult</code> table can now store <code>NULL</code> as a value (like the rest of the <code>ipaddress</code> fields), in case IP logging is disabled</li>
+	<li>The <code>type</code> field in the <code>board</code> table has been renamed to <code>level</code>, its datatype changed to <code>tinyint(3)</code>, and can no longer be of type NULL; this is in preparation of introducing multi-level forums (i.e. subforums)</li>
+	<li>The <code>customavatar</code> field in the <code>member</code> table has been eliminated since it's no longer used</li>
+	<li>For maximum compatibility and consistency, the maximum length of several "varchar"-type fields in the database has increased to 255 characters:
+		<ul class="sublist">
+			<li>attachment.filename</li>
+			<li>board.name</li>
+			<li>board.description</li>
+			<li>event.title</li>
+			<li>member.username</li>
+			<li>member.password</li>
+			<li>member.email</li>
+			<li>member.website</li>
+			<li>member.aim</li>
+			<li>member.icq</li>
+			<li>member.msn</li>
+			<li>member.yahoo</li>
+			<li>member.referrer</li>
+			<li>member.location</li>
+			<li>member.title</li>
+			<li>member.lastlocation</li>
+			<li>pm.subject</li>
+			<li>post.title</li>
+			<li>session.lastlocation</li>
+			<li>thread.title</li>
+			<li>thread.description</li>
+		</ul>
+	</li>
+
+	<li>Merged redundant code into a new global routine, <code>GetForumInfo()</code>, which is used by &quot;Forum Jump&quot; forms</li>
+	<li>Merged redundant code into a new global routine, <code>Paginate()</code>, which renders a pagination linkset</li>
+	<li>Merged redundant code into a new global routine, <code>UpdateForumStats()</code>, which updates the statistics of a specified forum to the what is current</li>
+	<li>Merged the functionality of <code>login.php</code>, <code>logout.php</code>, <code>forgotdetails.php</code>, and <code>profile.php</code> into a new file, <code>member.php</code></li>
+	<li>Merged the functionality of <code>event.php</code> into <code>calendar.php</code></li>
+
+	<li>The image size of <code>go.png</code> has been decreased from 28x21 to 24x17</li>
+	<li>The database connection information has been moved from <code>db.inc.php</code> into its own file, <code>dbinfo.inc.php</code></li>
+	<li>The default text alignment for the <code>Msg()</code> function is now <code>center</code></li>
+	<li>The CSS styles previously defined in <code>header.inc.php</code> and <code>posters.php</code> have been consolidated into a single external file, <code>style.inc.php</code>, which is now simply linked to as an external stylesheet</li>
+	<li>Replaced the multi-level page compression setting, <code>$CFG['general']['gzip']['aggression_lvl']</code>, with a binary <code>$CFG['general']['gzip']['enabled']</code></li>
+	<li>Fixed the <code>$CFG['general']['gzip']['compression_lvl']</code> setting and renamed it to <code>$CFG['general']['gzip']['level']</code></li>
+	<li>The cookies, <code>luserid</code> and <code>lpassword</code>, have been renamed to <code>activeuserid</code> and <code>activepassword</code>, respectively</li>
+
+	<li>Cleaned up lots of messages for consistency and clarity</li>
+	<li>Minor bug fixes</li>
+	<li>Minor CSS and markup fixes</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v9');">V0.09a</a></div>
+
+<ul id="v9">
+	<li>90% feature-complete, the Search engine has been rewritten and is comprised of several components:
+		<ul class="sublist">
+			<li>Main source file, <code>search.php</code></li>
+			<li>Common words file, <code>/includes/commonwords.inc.php</code></li>
+			<li>New directory, <code>/includes/search</code>, which stores the dependencies of <code>search.php</code>:
+				<ul class="sublist">
+					<li><code>main.inc.php</code></li>
+					<li><code>threadresults.inc.php</code></li>
+					<li><code>postresults.inc.php</code></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>Several new configuration settings have been implemented which allow for custom character length limits for various fields used throughout the forums:
+		<ul class="sublist">
+			<li><code>$CFG['maxlen']['subject']</code> &mdash; thread, post, event, and PM subjects</li>
+			<li><code>$CFG['maxlen']['desc']</code> &mdash; thread descriptions</li>
+			<li><code>$CFG['maxlen']['messagebody']</code> &mdash; post, event, and PM message bodies</li>
+			<li><code>$CFG['maxlen']['email']</code> &mdash; e-mail addresses</li>
+			<li><code>$CFG['maxlen']['pollquestion']</code> &mdash; poll questions</li>
+			<li><code>$CFG['maxlen']['pollchoice']</code> &mdash; poll choices</li>
+			<li><code>$CFG['maxlen']['pollchoices']</code> &mdash; number of poll choices</li>
+			<li><code>$CFG['maxlen']['username']</code> &mdash; member usernames</li>
+			<li><code>$CFG['maxlen']['password']</code> &mdash; member passwords</li>
+			<li><code>$CFG['maxlen']['website']</code> &mdash; Web site addresses</li>
+			<li><code>$CFG['maxlen']['aim']</code> &mdash; AIM handles</li>
+			<li><code>$CFG['maxlen']['icq']</code> &mdash; ICQ numbers</li>
+			<li><code>$CFG['maxlen']['msn']</code> &mdash; MSN Messenger handles</li>
+			<li><code>$CFG['maxlen']['yahoo']</code> &mdash; Yahoo! Messenger handles</li>
+			<li><code>$CFG['maxlen']['bio']</code> &mdash; member biographies</li>
+			<li><code>$CFG['maxlen']['location']</code> &mdash; member locations</li>
+			<li><code>$CFG['maxlen']['interests']</code> &mdash; member interests</li>
+			<li><code>$CFG['maxlen']['occupation']</code> &mdash; member occupations</li>
+			<li><code>$CFG['maxlen']['signature']</code> &mdash; member signatures</li>
+			<li><code>$CFG['maxlen']['folder']</code> &mdash; PM folder names</li>
+			<li><code>$CFG['maxlen']['query']</code> &mdash; search queries</li>
+		</ul>
+	</li>
+	<li>Fixed some serious bugs in <code>calendar.php</code></li>
+	<li><code>event.php</code> now takes into account the user's settings when selecting the default date</li>
+	<li>All user input expected to be numeric is now cast as such, therefore SQL errors will no longer be triggered when non-numeric input is passed</li>
+	<li><code>ShowQueries()</code> is no longer on by default, so users will not see any queries when SQL errors are triggered</li>
+	<li>Added a new user setting to the User Control Panel and Registration, <code>Threads Per Page</code>, to compliment <code>Posts Per Page</code></li>
+	<li>Added a new configuration setting, <code>$CFG['showqueries']</code>, which determines whether or not SQL queries are shown when an SQL error occurs</li>
+	<li>Added a new configuration setting, <code>$CFG['showerrors']</code>, which determines whether or not PHP-generated errors are shown at the bottom of pages</li>
+	<li>Renamed the configuration setting, <code>$CFG['avatar']['maxdem']</code>, to the more correct <code>$CFG['avatar']['maxdim']</code></li>
+	<li>Fixed the broken [php] tag and did some minor cleanup to the vB code parser</li>
+	<li>Merged several lines of redundant code into two external JavaScript files (<code>toolbar.inc.js</code> and <code>smilies.inc.js</code>) and a new function, <code>ShowToolbar()</code></li>
+	<li><i>vB code</i> has been renamed to <i>BB code</i></li>
+	<li>Finished translating HTML into XHTML; there may still be some unknown rogue markup, but most everything should now validate as XHTML 1.0 Transitional</li>
+	<li>All non-binary source and documentation files have been converted to use UNIX-style line termination</li>
+	<li>Minor markup fixes</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v8');">V0.08a</a></div>
+
+<ul id="v8">
+	<li>Polling has been implemented by <code>poll.php</code></li>
+	<li><code>online.php</code> has been revamped</li>
+	<li>Fixed a security flaw in <code>online.php</code> that would've allowed a user's account to be compromised</li>
+	<li>Added a new field, <code>lastrequest</code>, to the <code>member</code> and <code>session</code> tables of the database; the new field holds the user's last <code>$_REQUEST</code> information</li>
+	<li>Improved the way local errors are handled</li>
+	<li>Fixed a bug in the Private Messaging System</li>
+	<li>Began translating HTML into XHTML; any template inconsistencies can probably be blamed on this transition</li>
+	<li>This document has been converted to valid XHTML 1.0 Strict and renamed to <code>changelog.html</code></li>
+	<li><code>readme.html</code> and <code>license.html</code> have been converted to valid XHTML 1.0 Strict</li>
+	<li>Removed the FAQ button in the header, since implementing it is not a priority</li>
+	<li>Moved the functionality of <code>addevent.php</code> into <code>event.php</code></li>
+	<li>Added a new global routine, <code>Msg()</code>, which has merged several functions</li>
+	<li>Fixed a bug in the header</li>
+	<li>Fixed a bug in <code>profile.php</code></li>
+	<li>Fixed a bug in <code>index.php</code> and <code>category.php</code></li>
+	<li><code>board.php</code> and <code>category.php</code> have been merged into <code>forumdisplay.php</code></li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v7');">V0.07a</a></div>
+
+<ul id="v7">
+	<li>Implemented custom user folders in Private Messaging</li>
+	<li>The Memberlist can now return just the members whose usernames begin with a specified character</li>
+	<li>The functionality of the Quote button has been implemented</li>
+	<li>Added a new configuration setting, <code>$CFG['parsing']['showimages']</code>, which controls whether or not [img] tags are shown as images or links</li>
+	<li>The parsing of vB codes has been revamped and improved</li>
+	<li>All form values are now handled through <code>$_REQUEST</code> instead of <code>$_GET</code> and <code>$_POST</code></li>
+	<li>Fixed several bugs in <code>private.php</code></li>
+	<li>Fixed a potential bug in <code>init.inc.php</code></li>
+	<li>The avatar system has been revamped and is now complete</li>
+	<li>Cookies are now used to remember users and log them in automatically</li>
+	<li>vB formatting code implemented: [list]</li>
+	<li>The Search engine has been removed while it is being overhauled</li>
+	<li>Several user options have been implemented</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v6');">V0.06a</a></div>
+
+<ul id="v6">
+	<li>The system is now licensed under the OvBB License Agreement v2; the main difference is that you can now remove the copyright notice at the bottom of pages</li>
+	<li>Errors are now handled internally by a new function: <code>HandleError()</code></li>
+	<li>A system-wide timestamp, <code>$CFG['globaltime']</code>, has replaced all calls to <code>time()</code>; this not only gets rid of redundant code, but also synchronizes the system</li>
+	<li>Pagination has been incorporated into <code>board.php</code>; gone are the days of a single long list of threads</li>
+	<li>Some HTML in <code>board.php</code>, <code>memberlist.php</code>, <code>search.php</code>, and <code>thread.php</code> has been rewritten to render better</li>
+	<li>Added a new field to the <code>member</code> table of the database: <code>threadsperpage</code></li>
+	<li>Renamed the configuration setting, <code>$CFG['default']['perpage']</code>, to a more specific <code>$CFG['default']['postsperpage']</code></li>
+	<li>Added a new configuration setting: <code>$CFG['default']['threadsperpage']</code></li>
+	<li>The calendar generated by <code>calendar.php</code> now reflects the user's time settings if they're logged in; and if they're not, it reflects the default time settings of the board</li>
+	<li>Replaced an <code>if</code>/<code>else</code> clause (8 lines) with a ternary statement (one line) in <code>login.php</code></li>
+	<li>Replaced the <code>while()</code> loop with a <code>for()</code> loop in <code>online.php</code></li>
+	<li>Eliminated a warning in <code>online.php</code></li>
+	<li>Replaced an <code>if</code>/<code>else</code> clause (two lines) with a ternary statement (one line) in <code>profile.php</code></li>
+	<li>The user's joindate in <code>register.php</code> is now calculated from the time as PHP reports it; it was previously calculated by the database</li>
+	<li>Fixed a number of overlooked instances of XSS vulnerabilities that existed throughout the forums</li>
+	<li>vB formatting codes implemented: [size=<i>blah</i>], [font=<i>blah</i>], [color=<i>blah</i>], [img], [code], [php], [quote], and [dt=<i>blah</i>]</li>
+	<li><i>Thread icons</i> are now called <i>post icons</i> to more accurately reflect their purpose; all related changes have been made (i.e., <code>threadicons.inc.php</code> is now <code>posticons.inc.php</code>, etc.)</li>
+	<li><code>login.php</code> now attempts to redirect the user to the page they were trying to access before they logged in</li>
+	<li>The user will now receive a message letting them know they're already a registered member if they try registering while logged in</li>
+	<li>Fixed a bug in <code>online.php</code> which caused it to not display the corresponding host name (if known) for users' IP addresses</li>
+	<li>Core functionality for Private Messages has been added</li>
+	<li>The Private Messages section of the User Control Panel index now works</li>
+	<li>Simple permissions have been implemented</li>
+	<li>Guests have been partially implemented</li>
+	<li>The core functionality of <code>editpost.php</code> has been mended and is now complete</li>
+	<li>Signatures are now parsed by default</li>
+	<li>Lots of changes to the database structure that I've lost track of</li>
+	<li>Fixed lots of bugs and changed many things that I've lost track of</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v5');">V0.05a</a></div>
+
+<ul id="v5">
+	<li>Consolidated the <code>Unauthorized()</code> functions of <code>editpost.php</code> and <code>event.php</code> into a single instance now located in <code>functions.inc.php</code></li>
+	<li>Consolidated the <code>InvalidThread()</code> functions of <code>posters.php</code>, <code>newreply.php</code>, and <code>thread.php</code> into a single instance now located in <code>functions.inc.php</code></li>
+	<li>Consolidated the <code>InvalidBoard()</code> functions of <code>newthread.php</code> and <code>board.php</code> into a single instance now located in <code>functions.inc.php</code></li>
+	<li>Changed &quot;validation&quot; to &quot;confirmation&quot; in <code>register.php</code> as it makes more sense</li>
+	<li>The brackets are now outside--no longer inside--the <i>Check signature length.</i> link in <code>register.php</code></li>
+	<li>The long-awaited User Control Panel makes its debut, comprised of several components:
+		<ul class="sublist">
+			<li>Main source file, <code>usercp.php</code></li>
+			<li>New directory, <code>/includes/usercp</code>, which stores the dependencies of <code>usercp.php</code>:
+				<ul class="sublist">
+					<li><code>editprofile.inc.php</code></li>
+					<li><code>editoptions.inc.php</code></li>
+					<li><code>editpassword.inc.php</code></li>
+					<li><code>editbuddylist.inc.php</code></li>
+					<li><code>editignorelist.inc.php</code></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>Fixed a bug in <code>TimeInfo()</code> of <code>header.inc.php</code> which, in some instances, caused incorrect timeoffsets to be displayed</li>
+	<li>Moved <code>TimeInfo()</code> out of <code>header.inc.php</code> and into a more proper location: <code>functions.inc.php</code></li>
+	<li>Fixed a bug in the time functionality code in <code>init.inc.php</code> that basically disregarded the users' Daylight Saving Time/Summer Time settings</li>
+	<li>Modified various whitespaces (both textual as well as visual) throughout the forums to increase consistency and aesthetics</li>
+	<li>Added five new fields to the <code>member</code> table of the database: <code>showsigs</code>, <code>showavatars</code>, <code>autologin</code>, <code>buddylist</code>, and <code>ignorelist</code></li>
+	<li>Fixed a bug in <code>init.inc.php</code> that caused <code>PageStats()</code> to display an incorrect query count for users logged in</li>
+	<li>Moved the &quot;Start timer...&quot; code closer to the top of <code>init.inc.php</code> to report a more accurate generation time of pages</li>
+	<li>Deleted several superfluous instances of various variables throughout the system</li>
+	<li>Significantly modified <code>online.php</code> to allow multiple description entries for the same page based on different querystrings</li>
+	<li>Added location descriptions in <code>online.php</code> for the new User Control Panel sections</li>
+	<li>Fixed a bug in <code>profile.php</code> that caused the user's biography to not be displayed</li>
+	<li>The &quot;Add [user] to your Buddy list.&quot; and &quot;Add [user] to your Ignore list.&quot; links in <code>profile.php</code> now work</li>
+	<li>Modified some junk code in <code>login.php</code></li>
+	<li>Added an error page to <code>login.php</code> for when an invalid username or password is given</li>
+	<li>Fixed a bug in <code>profile.php</code> that caused users born 1969 or before to appear not to have a birthday; the bug affected only Windows systems</li>
+	<li>Eliminated several XSS vulnerability instances in <code>thread.php</code>, <code>board.php</code>, and <code>category.php</code></li>
+	<li>Added a clause in <code>register.php</code> to check if the GD graphics library is installed before calling <code>ImageVerification()</code>; if the library isn't installed, image verification is simply skipped</li>
+	<li>Fixed a bug in <code>register.php</code> which would have allowed automated processes to register new member accounts, even if image verification was enabled</li>
+	<li>Fixed several instances of invalid HTML throughout the forums</li>
+	<li>Fixed a bug in <code>category.php</code> that caused it to try and display a category board when no category ID was specified</li>
+	<li>Fixed a bug in <code>thread.php</code> that caused the <i>lastpost</i> anchor to be printed out at the wrong time</li>
+	<li>Replaced an <code>if</code>/<code>else</code> clause (8 lines) with a ternary statement (one line) in <code>addevent.php</code></li>
+	<li>All broken links in the system now loopback (point to the page in which they are contained) and will continue to do so until their functionality is implemented</li>
+	<li>Removed unnecessary instances of <code>echo()</code> in <code>newreply.php</code>, <code>newthread.php</code>, <code>editpost.php</code>, and <code>addevent.php</code></li>
+	<li>The status bar in <code>newreply.php</code>, <code>newthread.php</code>, <code>editpost.php</code>, and <code>addevent.php</code> now reads &quot;This toolbar requires JavaScript.&quot; when the user's browser does not support JavaScript</li>
+	<li>Added an error page to <code>profile.php</code> for when an invalid user ID is given</li>
+	<li>Fixed a problem with the system that would arise when a user specified an incomplete homepage address</li>
+	<li>Fixed a problem related to user avatars: if a user has no avatar, the value of the <code>avatar</code> field in their <code>member</code> record should be <code>NULL</code>; otherwise, the field should equal the filename of the image to be used</li>
+	<li>The type of the database table (MyISAM, InnoDB, etc.) is no longer specified in the installation SQL script</li>
+	<li>Names are no longer enclosed in backticks in the installation SQL script</li>
+	<li>Condensed some code in <code>register.php</code></li>
+	<li>Added a snippet of code to <code>register.php</code> to make sure the e-mail address the user is specifying isn't already used by an existing member</li>
+	<li>Fixed a simple bug in <code>register.php</code> whereby a guest's session would not be deleted from the database once they registered thus showing one too many active users</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v4');">V0.04a</a></div>
+
+<ul id="v4">
+	<li>Fixed a bug that affected OvBB installations hosted on a server with <code>session.use_trans_sid</code> enabled by default, causing problems for forum members who didn't accept cookies</li>
+	<li>Fixed a security flaw in URLs with the raw Session ID appended, potentially allowing an XSS attack to be performed</li>
+	<li>Changed the session name from the PHP default, <i>PHPSESSID</i>, to the one used in vBulletin 2, <i>s</i></li>
+	<li>Fixed a simple bug in <code>header.inc.php</code> whereby a guest's session would not be deleted from the database in the event they were to register or login, thus showing one too many active users</li>
+	<li>Fixed (I think) a bug in the time-related functionality; apparently I had removed a configuration setting I thought was no longer needed:
+		<ul class="sublist">
+			<li><code>$CFG['time_offset']['display']</code> renamed to <code>$CFG['time']['display_offset']</code></li>
+    		<li><code>$CFG['time']['dst_offset']</code> configuration setting re-added; previously existed as <code>$CFG['dst']</code></li>
+    		<li><code>$CFG['time']['dst']</code> configuration setting added to replace using <code>date('I')</code></li>
+    		<li><code>$CFG['time_offset']['server']</code> configuration setting deleted</li>
+    		<li>Unnecessary (I hope) else clause removed from <code>init.inc.php</code></li>
+    	</ul>
+    </li>
+    <li>Added a location description for <code>event.php</code> in <code>online.php</code>; the absence of a description caused users who were viewing a calendar event to have an empty Last Activity value in the <i>Who's Online</i> list</li>
+	<li>Capitalized &quot;index&quot; in the location description for <code>index.php</code> in <code>online.php</code></li>
+	<li>Modified various whitespaces throughout the forums to increase consistency</li>
+	<li>Smilie codes are now parsed (into their respective images) when previewing a new thread, reply, or post edit</li>
+	<li>The &quot;Disable smilies...&quot; option in <code>newreply.php</code> and <code>addevent.php</code> actually works now</li>
+	<li>Posts that have smilies disabled in them are now displayed correctly by <code>thread.php</code></li>
+	<li>The automatic e-mail address parsing option in <code>newthread.php</code>, <code>newreply.php</code>, and <code>addevent.php</code> now works; the one in <code>editpost.php</code> will work, too, when I fix the double-tag bug in <code>ParseEMails()</code></li>
+	<li>Disabled the automatic e-mail address parsing option in <code>editpost.php</code> until I fix a bug (see above)</li>
+	<li>Disabled the automatic URL parsing option in <code>newthread.php</code> and <code>newreply.php</code>, as that functionality hasn't been added yet</li>
+	<li>New source file added, <code>functions.inc.php</code>, whose purpose is to consolidate the many functions into one location; though only two functions are in it as of now, most--if not all--will be there in the coming versions</li>
+	<li>New functions added: <code>ParseMessage()</code> and <code>ParseEMails()</code></li>
+	<li>Improved the parsing of these vB formatting codes: [b], [i], and [u]</li>
+	<li>vB formatting codes added: [email], [email=<i>blah</i>], [url], and [url=<i>blah</i>]</li>
+	<li>New source file added, <code>forgotdetails.php</code>, which allows users to retrieve their member details in case they've forgotten them; also fixed an associated link in <code>editpost.php</code></li>
+	<li>New database table added, <code>request</code>, which temporarily stores member details requests</li>
+	<li>Almost all static forum colors have been replaced with configuration settings definable in <code>config.inc.php</code>; changing the forum color layout is now as simple as updating the configuration file!</li>
+	<li>The <i>View New Posts</i> link that appears at the top of the forum index when you're logged in no longer points to the non-existent <code>somelink.php</code> page; the <i>View New Posts</i> functionality still doesn't work, mind you, but at least it doesn't take you to a non-existent page</li>
+	<li>Added the item, <i>Please select one:</i>, into the Forum Jump list found in various places throughout the forums; the absence of this caused the first forum listed to be inaccessible</li>
+	<li>Improved the &quot;vBulletin-likeness&quot; of the style of <code>memberlist.php</code></li>
+	<li>Fixed a bug that caused dates to be incorrectly formatted in <code>addevent.php</code></li>
+	<li>Fixed a bug in <code>addevent.php</code> that allowed users to post events without subjects</li>
+	<li>Added a space to fix a grammatically-incorrect error message in <code>addevent.php</code></li>
+	<li>Changed all occurrences of &quot;date&quot; to &quot;day&quot;, in <code>addevent.php</code>, when referencing a day and not a complete date</li>
+	<li>Removed the &quot;Make this event public?&quot; option in <code>addevent.php</code>, as it was giving me headaches and isn't necessary anyway; I'll probably add it back at a later version</li>
+</ul>
+
+<div><a class="heading" href="javascript:showhide('v3');">V0.03a</a></div>
+
+<ul id="v3">
+	<li>Replaced most of the remaining vBulletin images with my own</li>
+	<li>Renamed several images for better description</li>
+	<li>Converted all remaining GIF images to PNG</li>
+	<li>Removed unneeded background image instance in <code>header.php</code></li>
+	<li>Fixed a fatal bug in the results page of <code>search.php</code></li>
+	<li>Fixed a bug in <code>editpost.php</code> that would've allowed anyone to edit any post</li>
+	<li>Fixed a bug in <code>newreply.php</code> that caused new replies to be only partially added to the database</li>
+	<li>Got rid of various benign warnings that showed up in <code>editpost.php</code>, <code>index.php</code>, and <code>register.php</code></li>
+	<li>Corrected the text style of the message boxes in <code>newreply.php</code> and <code>newthread.php</code></li>
+	<li>Modified <code>index.php</code> so that it only displays the Board Statistics and newest member welcome when there actually exists at least one registered member</li>
+</ul>
+
+</body>
+
+</html>
