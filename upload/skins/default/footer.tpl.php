@@ -7,7 +7,7 @@
 <div class="small" style="color: <?php echo($CFG['style']['credits']); ?>;" align="center">
 	<br /><b><?php echo(htmlsanitize($CFG['general']['name'])); ?></b>
 	<br /><?php echo($CFG['general']['copyright']); ?>
-	<br /><a style="color: <?php echo($CFG['style']['credits']); ?>;" href="http://www.ovbb.org">Powered by OvBB V<?php echo($CFG['version']); ?></a><br /><br />
+	<br /><a style="color: <?php echo($CFG['style']['credits']); ?>;" href="http://ovbb.net">Powered by OvBB V<?php echo($CFG['version']); ?></a><br /><br />
 </div>
 
 <?php
