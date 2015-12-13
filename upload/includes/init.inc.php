@@ -25,7 +25,6 @@
 
 	// Set up our custom error handler.
 	$aGlobalErrors = array();
-	ini_set('html_errors', '0');
 	error_reporting(E_ALL ^ E_NOTICE);
 	set_error_handler('HandleError');
 
