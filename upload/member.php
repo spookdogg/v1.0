@@ -289,7 +289,7 @@ function Login()
 	}
 
 	// Invalid username/password pair given.
-	Msg("Wrong username or password specified. Please go back and try again. Click <a href=\"member.php?action=forgotdetails\">here</a> if you've forgotten your member details.");
+	Msg("Wrong username or password specified. Click <a href=\"member.php?action=login\">here</a> to go back and try again. Click <a href=\"member.php?action=forgotdetails\">here</a> if you've forgotten your member details.");
 }
 
 // *************************************************************************** \\
